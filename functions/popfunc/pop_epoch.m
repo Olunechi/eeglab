@@ -262,6 +262,7 @@ alllatencies = tmpeventlatency(Ievent);
 if isempty(alllatencies)
    error('pop_epoch(): empty epoch range (no epochs were found).'); return;
 end
+EEG.etc.EpochsSelected = length(alllatencies);
 fprintf('pop_epoch():%d epochs selected\n', length(alllatencies));
 
 try
@@ -340,6 +341,7 @@ switch lower( g.timeunit )
 	otherwise, disp('pop_epoch(): invalid event time format'); beep; return;
 end
 alllatencies = alllatencies(indices);
+EEG.etc.EpochsGenerated = length(indices);
 fprintf('pop_epoch():%d epochs generated\n', length(indices));
 
 
