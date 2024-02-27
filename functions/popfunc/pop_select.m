@@ -376,6 +376,7 @@ if isempty(g.trial)
 end
 if length(g.trial) ~= EEG.trials
 	fprintf('Removing %d trial(s)...\n', EEG.trials - length(g.trial));
+    EEG.etc.TrialsRemoved = EEG.trials - length(g.trial);
 end
 if length(g.channel) ~= EEG.nbchan
 	fprintf('Removing %d channel(s)...\n', EEG.nbchan - length(g.channel));
